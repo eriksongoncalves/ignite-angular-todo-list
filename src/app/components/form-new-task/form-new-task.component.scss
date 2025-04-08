@@ -22,7 +22,7 @@ form {
       border: 1px solid var(--purpleDark);
     }
 
-    &.ng-touched.ng-invalid {
+    &.ng-touched.ng-invalid:not(.ng-pristine) {
       border: 1px solid var(--danger);
     }
   }

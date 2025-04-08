@@ -1,3 +1,7 @@
 <app-header></app-header>
-<app-form-new-task></app-form-new-task>
-<app-todo-list></app-todo-list>
+<app-form-new-task (createTodoSubmit)="createTodo($event)"></app-form-new-task>
+<app-todo-list
+  [todoList]="todoList"
+  (removeTodo)="removeTodo($event)"
+  (updateStatus)="updateStatus($event)"
+></app-todo-list>

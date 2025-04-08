@@ -1,27 +1,28 @@
 <div class="container">
-  <form [formGroup]="formNewTask" (ngSubmit)="handleCreateTask()">
+  <form [formGroup]="formNewTodo" (ngSubmit)="handleCreateTodo()">
     <input
       type="text"
-      name="task"
+      name="description"
       placeholder="Adicione uma nova tarefa"
-      formControlName="task"
+      formControlName="description"
       autocomplete="off"
-      [class.filled]="!!formNewTask.value.task"
+      [class.filled]="!!descriptionControl?.value"
+      #descriptionInput
     />
 
-    <button type="submit" [disabled]="formNewTask.invalid">
+    <button type="submit" [disabled]="formNewTodo.invalid">
       Criar <img src="/assets/icons/plus.svg" alt="Criar tarefa" />
     </button>
   </form>
 
   <span
     class="input-error-message"
-    *ngIf="formNewTask.get('task')?.errors?.['required'] && formNewTask.get('task')?.touched"
+    *ngIf="descriptionControl?.errors?.['required'] && descriptionControl?.touched && !descriptionControl?.pristine"
     >Campo obrigatório</span
   >
   <span
     class="input-error-message"
-    *ngIf="formNewTask.get('task')?.errors?.['minlength'] && formNewTask.get('task')?.touched"
+    *ngIf="descriptionControl?.errors?.['minlength'] && descriptionControl?.touched"
     >O campo deve conter pelo menos 3 caracteres</span
   >
 </div>

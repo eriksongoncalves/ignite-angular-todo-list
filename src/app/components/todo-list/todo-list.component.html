@@ -1,38 +1,22 @@
 <section id="todoList">
   <div class="container">
     <div class="summary">
-      <p>Tarefas criadas <span>5</span></p>
-      <p class="done">Concluídas <span>2 de 5</span></p>
+      <p>Tarefas criadas <span>{{todoListLength}}</span></p>
+      <p class="done">Concluídas <span>{{doneTodosLength}} de {{todoListLength}}</span></p>
     </div>
+
     <ul>
-      <li>
-        <input type="radio" />
-        <p>
-          Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames
-          integer.
-        </p>
+      <li *ngFor="let todo of todoList; index as idx">
+        <input
+          type="radio"
+          [checked]="todo.status === 'done'"
+          (click)="handleUpdateStatus(todo.status, idx)"
+        />
+        <p>{{todo.description}}</p>
 
-        <button type="button"><img src="/assets/icons/trash.svg" alt="Excluir" /></button>
-      </li>
-
-      <li>
-        <input type="radio" />
-        <p>
-          Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames
-          integer.
-        </p>
-
-        <button type="button"><img src="/assets/icons/trash.svg" alt="Excluir" /></button>
-      </li>
-
-      <li [class.isdone]="true">
-        <input type="radio" />
-        <p>
-          Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames
-          integer.
-        </p>
-
-        <button type="button"><img src="/assets/icons/trash.svg" alt="Excluir" /></button>
+        <button type="button" (click)="handleRemoveTodo(idx)">
+          <img src="/assets/icons/trash.svg" alt="Excluir" />
+        </button>
       </li>
     </ul>
   </div>
