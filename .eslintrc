@@ -62,6 +62,7 @@
         "plugin:prettier/recommended"
       ],
       "rules": {
+        "@typescript-eslint/explicit-function-return-type": "error",
         "@angular-eslint/template/button-has-type": "error",
         "@angular-eslint/template/prefer-control-flow": "off",
         "@angular-eslint/template/click-events-have-key-events": "off",

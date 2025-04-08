@@ -1,0 +1,63 @@
+#todoList {
+  margin-top: 64px;
+
+  .summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+
+    p {
+      font-weight: bold;
+      color: var(--blue);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+
+      &.done {
+        color: var(--purple);
+      }
+
+      span {
+        display: block;
+        background-color: var(--gray400);
+        font-size: 12px;
+        color: var(--gray200);
+        text-align: center;
+        padding: 2px 8px;
+        border-radius: 100px;
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 80px;
+
+    li {
+      padding: 16px;
+      background-color: var(--gray500);
+      border: 1px solid var(--gray400);
+      border-radius: 8px;
+
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+
+      p {
+        flex: 1;
+      }
+
+      button {
+        background: transparent;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+        margin-top: 3px;
+      }
+    }
+  }
+}

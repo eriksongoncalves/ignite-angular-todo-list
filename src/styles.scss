@@ -29,7 +29,7 @@ body {
   font-family: Inter;
   font-weight: 400;
   font-size: 14px;
-  color: var(--white);
+  color: var(--gray100);
 }
 
 body {
@@ -40,4 +40,24 @@ body {
   width: 100%;
   max-width: 736px;
   margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+}
+
+input[type='radio'] {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+
+  width: 25px;
+  height: 25px;
+  background: url('/assets/icons/uncheck.svg') no-repeat;
+
+  &:checked {
+    border: 0;
+    background: url('/assets/icons/check.svg') no-repeat;
+  }
 }

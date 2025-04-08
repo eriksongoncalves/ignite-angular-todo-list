@@ -20,7 +20,7 @@ export class FormNewTaskComponent implements OnInit {
     })
   }
 
-  handleCreateTask() {
+  handleCreateTask(): void {
     console.log('>>> formNewTask', this.formNewTask.value)
   }
 }
