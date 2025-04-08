@@ -1,5 +1,9 @@
 #todoList {
-  margin-top: 64px;
+  margin-top: 40px;
+
+  @media screen and (min-width: 760px) {
+    margin-top: 64px;
+  }
 
   .summary {
     display: flex;
