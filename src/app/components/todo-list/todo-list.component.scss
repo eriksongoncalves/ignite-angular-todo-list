@@ -46,10 +46,16 @@
       background-color: var(--gray500);
       border: 1px solid var(--gray400);
       border-radius: 8px;
-
       display: flex;
       align-items: flex-start;
       gap: 12px;
+
+      &.isdone {
+        p {
+          text-decoration: line-through;
+          color: var(--gray300);
+        }
+      }
 
       p {
         flex: 1;
