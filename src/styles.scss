@@ -1,4 +1,6 @@
 :root {
+  --white: #ffffff;
+
   --gray100: #f2f2f2;
   --gray200: #d9d9d9;
   --gray300: #808080;
@@ -22,6 +24,20 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--white);
+}
+
 body {
   background-color: var(--gray600);
+}
+
+.container {
+  width: 100%;
+  max-width: 736px;
+  margin: 0 auto;
 }
