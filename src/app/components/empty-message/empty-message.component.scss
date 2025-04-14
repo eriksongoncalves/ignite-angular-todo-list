@@ -1,0 +1,17 @@
+#empty-message {
+  font-size: 16px;
+  color: var(--gray300);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 64px;
+
+  img {
+    margin-bottom: 16px;
+  }
+
+  b {
+    font-weight: 700;
+  }
+}

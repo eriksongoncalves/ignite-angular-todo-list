@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
 import { TodoModel, TodoStatus } from '../../models/todo.model'
+import { EmptyMessageComponent } from '../empty-message/empty-message.component'
 
 type UpdateStatusEmmiter = {
   status: TodoStatus
@@ -11,7 +12,7 @@ type UpdateStatusEmmiter = {
 @Component({
   selector: 'app-todo-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, EmptyMessageComponent],
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.scss'
 })

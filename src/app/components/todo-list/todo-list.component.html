@@ -1,23 +1,29 @@
 <section id="todoList">
   <div class="container">
-    <div class="summary">
-      <p>Tarefas criadas <span>{{todoListLength}}</span></p>
-      <p class="done">Concluídas <span>{{doneTodosLength}} de {{todoListLength}}</span></p>
+    <div *ngIf="todoList.length > 0; else emptyMessage">
+      <div class="summary">
+        <p>Tarefas criadas <span>{{todoListLength}}</span></p>
+        <p class="done">Concluídas <span>{{doneTodosLength}} de {{todoListLength}}</span></p>
+      </div>
+
+      <ul>
+        <li *ngFor="let todo of todoList; index as idx" [class.isdone]="todo.status === 'done'">
+          <input
+            type="radio"
+            [checked]="todo.status === 'done'"
+            (click)="handleUpdateStatus(todo.status, idx)"
+          />
+          <p>{{todo.description}}</p>
+
+          <button type="button" (click)="handleRemoveTodo(idx)">
+            <img src="/assets/icons/trash.svg" alt="Excluir" />
+          </button>
+        </li>
+      </ul>
     </div>
 
-    <ul>
-      <li *ngFor="let todo of todoList; index as idx">
-        <input
-          type="radio"
-          [checked]="todo.status === 'done'"
-          (click)="handleUpdateStatus(todo.status, idx)"
-        />
-        <p>{{todo.description}}</p>
-
-        <button type="button" (click)="handleRemoveTodo(idx)">
-          <img src="/assets/icons/trash.svg" alt="Excluir" />
-        </button>
-      </li>
-    </ul>
+    <ng-template #emptyMessage>
+      <app-empty-message></app-empty-message>
+    </ng-template>
   </div>
 </section>
