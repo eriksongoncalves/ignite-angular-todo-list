@@ -62,7 +62,7 @@ describe('FormNewTaskComponent', () => {
 
     fixture.detectChanges()
 
-    const buttonElement = fixture.nativeElement.querySelector('button') as HTMLInputElement
+    const buttonElement = fixture.nativeElement.querySelector('button') as HTMLButtonElement
 
     expect(buttonElement.hasAttribute('disabled')).toBeTrue()
   })
@@ -73,7 +73,7 @@ describe('FormNewTaskComponent', () => {
 
     fixture.detectChanges()
 
-    const buttonElement = fixture.nativeElement.querySelector('button') as HTMLInputElement
+    const buttonElement = fixture.nativeElement.querySelector('button') as HTMLButtonElement
 
     expect(buttonElement.hasAttribute('disabled')).toBeFalse()
   })
@@ -86,7 +86,7 @@ describe('FormNewTaskComponent', () => {
 
     spyOn(component.createTodoSubmit, 'emit')
 
-    const buttonElement = fixture.nativeElement.querySelector('button') as HTMLInputElement
+    const buttonElement = fixture.nativeElement.querySelector('button') as HTMLButtonElement
 
     buttonElement.click()
 
@@ -94,6 +94,6 @@ describe('FormNewTaskComponent', () => {
 
     fixture.detectChanges()
 
-    expect(component.descriptionControl?.value).toBe('')
+    expect(component.descriptionControl?.value).toBeNull()
   })
 })
